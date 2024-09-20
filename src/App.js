@@ -1,25 +1,44 @@
-import logo from './logo.svg';
+import { useState, useEffect, useContext } from 'react';
+import { Routes, Route } from 'react-router-dom';
+
+
+import { UtilsContext } from './context/utils-context/utils-context.jsx';
+import InitPag from './component/init-pag/init-pag.component';
+import NavRouters from './routers/nav/nav.routers.jsx';
+
+// import logoBlanco from './public/img/logoBlanco.png';
+
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+  const { deployedInitLogo } = useContext(UtilsContext);
+  
+  const [isVisible, setIsVisible] = useState(()=>{
+    const sessionStorageDeployedInitLogo = sessionStorage.getItem('deployedInitLogo');
+    return sessionStorageDeployedInitLogo !== null ? sessionStorageDeployedInitLogo : false;
+  });
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsVisible(true);
+    }, 3756)
+
+  }, [deployedInitLogo == false]);
+
+  
+  return(
+    <>
+      {
+        deployedInitLogo  ? null : <InitPag imgLogo={'/img/logoBlanco.png'} />
+      }
+      {
+        isVisible ? 
+          <>     
+            <NavRouters />
+          </> : null 
+      }
+    </>
+  )
 }
 
 export default App;

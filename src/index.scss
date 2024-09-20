@@ -1,0 +1,45 @@
+$primary-color: #42CF8B;
+$secondary-color: #50A57C;
+$tertiary-color: #25FA93;
+$quaternary-color: #507A66;
+$quinary-color: #415049;
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: "Cormorant Garamond", serif;
+  // font-weight: 500;
+  font-style:  400 Italic;
+  // position: relative; /* Necesario para el posicionamiento del pseudo-elemento */
+  // overflow: hidden; /* Opcional: evita el scroll si la imagen es más grande que la pantalla */
+  
+}
+
+p {
+    font-weight: 400;
+    font-size: 14px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+h3{
+  font-weight: 600;
+  font-size: 16px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body::before {
+  content: "";
+  position: fixed; /* Cambiado a fixed para que se mantenga en su lugar al hacer scroll */;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../public/img/logoNegro.png");
+  background-size: 25%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 0.5; /* Ajusta la opacidad según sea necesario (0.0 - 1.0) */
+  z-index: -1; /* Asegura que la capa de la imagen esté detrás del contenido */
+
+}

@@ -1,0 +1,38 @@
+.boletin-home__container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    margin-top: 13%;
+
+    .boletin-home__container--img{
+        display: flex;
+        justify-content: center;
+        width: 50%;
+        height: 100%;
+    }
+
+    .boletin-home__content--section{
+        width: 50%;
+        height: 100%;
+        position: relative; 
+
+        .boletin-home__content--section-title{
+            margin-bottom: 7%;
+        }
+
+        .boletin-home__content--section-button{
+            display: flex;
+            justify-content: center;
+            width: 80%;
+
+            .boletin-home__content--section-button-container{
+                width: 40%;
+            }
+
+            
+        }
+    }
+    
+
+}

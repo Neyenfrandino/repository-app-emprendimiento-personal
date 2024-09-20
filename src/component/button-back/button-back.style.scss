@@ -1,0 +1,14 @@
+.button-back {
+    position: absolute;
+    top: 70px;
+    left: 10px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+
+    &:hover {
+        color: #ff0000;
+        transform: scale(.9);
+    }
+}

@@ -1,0 +1,108 @@
+.gallery-service__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    // margin-top: 15%;
+    overflow: hidden;
+
+    .gallery-service {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: calc(50% - 20px); /* Dos elementos por fila con un espacio entre ellos */
+        box-sizing: border-box;
+        position: relative;
+        transition: all 0.5s ease-in-out; /* Transición general para suavizar el efecto */
+
+        &:hover .gallery-service__image img {
+            transition: opacity 0.3s ease-in-out;
+            // opacity: 0.8; /* Ajusta la opacidad si lo deseas */
+        }
+
+
+        .gallery-service__image {
+            width: 100%;
+            height: 500px; /* Altura fija para mantener la proporción */
+            object-fit: cover;
+            background-color: black;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                opacity: 0.5;
+                transition: opacity 0.3s ease-in-out;
+            }
+        }
+
+        .gallery-service__text {
+            position: absolute;
+            bottom: 20px; /* Espacio en la parte inferior por defecto */
+            left: 30px;
+            width: calc(100% - 60px); /* Dejar espacio en ambos lados */
+            color: #fff;
+            padding: 10px;
+            box-sizing: border-box;
+            transition: bottom 0.5s ease-in-out; /* Transición suave para el movimiento hacia arriba */
+            
+            h3 {
+                font-size: 1.5rem;
+                margin-bottom: 10px;
+                position: relative;
+                padding-bottom: 10px; /* Espacio para el subrayado */
+                transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; /* Transición para movimiento y opacidad */
+                transform: translateY(150px); /* Desplazamiento hacia abajo por defecto */
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    bottom: 0; /* Ajusta la distancia del subrayado desde el texto */
+                    width: 50%;
+                    height: 2px; /* Grosor del subrayado */
+                    background-color: #25FA93;
+                    z-index: 1;
+                    transition: background-color 0.3s ease-in-out; /* Solo transición de color */
+                }
+            }
+
+            p {
+                font-size: 0.9rem;
+                margin-bottom: 10px;
+                line-height: 1.5;
+                opacity: 0; /* Inicialmente oculto */
+                transform: translateY(10px); /* Inicialmente desplazado hacia abajo */
+                transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; /* Transición para movimiento y opacidad */
+            }
+
+            .gallery-service__button {
+                display: block; /* Asegúrate de que el botón esté en el flujo del documento */
+                opacity: 0; /* Inicialmente oculto */
+                transform: translateY(10px); /* Inicialmente desplazado hacia abajo */
+                transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; /* Transición para movimiento y opacidad */
+                
+                button {
+                    background-color: transparent;
+                    color: #25FA93;
+                    padding: 10px;
+                    outline: none;
+                    border: none;
+                    cursor: pointer;
+                    letter-spacing: 1.5px;
+                    transition: all 0.3s ease-in-out;
+
+                    &:hover {
+                        color: #ffffff;
+                        transition: all 0.3s ease-in-out;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.gallery-service:hover .gallery-service__text h3,
+.gallery-service:hover .gallery-service__text p,
+.gallery-service:hover .gallery-service__text .gallery-service__button {
+    transform: translateY(0); /* Regresa al lugar original */
+    opacity: 1; /* Vuelve a ser visible */
+}

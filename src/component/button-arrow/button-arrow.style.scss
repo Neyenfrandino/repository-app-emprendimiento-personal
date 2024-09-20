@@ -1,0 +1,43 @@
+.button-arrow__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%; /* Ajusta según tus necesidades */
+    position: relative; /* Necesario para que los íconos posicionados absolutamente se coloquen correctamente */
+}
+
+.button-arrow__left-icon,
+.button-arrow__right-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute; /* Posicionamiento absoluto para colocar los íconos más cerca de la imagen */
+    top: 50%; /* Centra verticalmente */
+    transform: translateY(-50%); /* Ajusta el centro verticalmente */
+}
+
+.button-arrow__left-icon {
+    left: 10px; /* Ajusta la distancia desde el borde izquierdo de la imagen */
+}
+
+.button-arrow__right-icon {
+    right: 10px; /* Ajusta la distancia desde el borde derecho de la imagen */
+}
+
+.button-arrow__left,
+.button-arrow__right {
+    background: none;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    transition: background 0.3s ease;
+    font-size: 24px; /* Tamaño del ícono */
+}
+
+.button-arrow__left:hover,
+.button-arrow__right:hover {
+    background: rgba(255, 255, 255, 0.1); /* Color de fondo al pasar el ratón */
+    border-radius: 4px; /* Opcional: bordes redondeados */
+}
+

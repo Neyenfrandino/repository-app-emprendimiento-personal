@@ -1,0 +1,38 @@
+.abaut-me__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    // padding: 50px;
+    backdrop-filter: blur(2px);
+    animation: identifier .3s ease-in-out;
+    overflow: hidden;
+
+    .abaut-me__header {
+        background-color: transparent;
+    }
+}
+
+
+.content__detail__all{
+    background-color: #25FA9333;
+    margin-top: 5%;
+
+    .abaut-me__detail {
+        display: flex; // Utiliza flexbox para la disposición de los elementos
+        flex-direction: row; // Alinea los elementos en una fila horizontal
+        align-items: flex-start; // Alinea los elementos verticalmente en la parte superior del contenedor
+        justify-content: flex-start; // Alinea los elementos horizontalmente al principio del contenedor (puedes usar center o space-between según lo que necesites)
+        gap: 10px; // Agrega un espacio consistente entre los elementos (opcional)
+    }
+}
+
+@keyframes identifier {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+    
+}

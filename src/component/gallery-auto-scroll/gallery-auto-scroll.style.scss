@@ -1,0 +1,161 @@
+.gallery-auto-scroll__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0 auto;
+    width: 80%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    backdrop-filter: blur(10px);
+    background-color: #ffffff;
+
+    .gallery-auto-scroll__item {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+        z-index: 0;
+        gap: 25px;
+
+        &.activation__item {
+            z-index: 1;
+            transform: scale(1.1);
+            opacity: 1;
+            filter: blur(0);
+        }
+
+        &:not(.activation__item) {
+            transform: scale(0.9);
+            opacity: 0.2;
+            filter: blur(5px);
+            transform: translateX(-60px) translateY(-40px) scale(0.9);
+        }
+
+        .gallery-auto-scroll__image {
+            width: 50%;
+            height: 100%;
+            overflow: hidden;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            
+
+            img {
+                width: 300px;
+                height: 300px;
+                object-fit: cover;
+                border-radius: 10px;
+                transition: transform 1s ease-in-out;
+            }
+        }
+
+        .gallery-auto-scroll__text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: start;
+            width: 40%;
+            height: 100%;
+
+            .gallery-auto-scroll__text--fraseCelebre {
+                font-size: 1.5rem;
+                color: #6c6a6a;
+                margin-top: 0;
+                margin-bottom: 60px;
+                position: relative;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    bottom: -8px;
+                    width: 110%;
+                    height: 2px;
+                    background-color: #25FA93;
+                    z-index: 1;
+                    transition: background-color 0.3s ease-in-out;
+                }
+            }
+
+            .gallery-auto-scroll__text--autor {
+                font-size: 1.2rem;
+                letter-spacing: 2px;
+                color: #25FA93;
+                margin-top: 0;
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    .gallery-auto-scroll__position {
+        position: absolute;
+        bottom: 10px; /* Ajusta la posición vertical según necesites */
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        z-index: 2; /* Asegúrate de que los puntos de paginación estén por encima de las imágenes */
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            z-index: 1;
+        }
+
+        .pagination-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #25FA93;
+            border-radius: 50%;
+            margin: 0 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+            position: relative;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: -2.9px;
+                left: -2.9px;
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                border: 1px solid #00000077;
+                opacity: 0;
+                transition: opacity 0.3s ease-in-out;
+            }
+
+            &:hover::after {
+                opacity: 1;
+            }
+        }
+
+        .pagination-active {
+            background-color: #000000;
+            transition: background-color 0.3s ease-in-out;
+        }
+    }
+}
+
+@keyframes entry-item {
+    0% {
+        opacity: 0;
+        transform: translateX(-60px) translateY(-30px) scale(0.9); 
+    }
+
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.activation__item {
+    animation: entry-item .5s ease-out forwards;
+}

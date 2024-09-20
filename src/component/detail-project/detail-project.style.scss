@@ -1,0 +1,111 @@
+.detail-project__container {
+    backdrop-filter: blur(2px);
+    animation: identifier 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    justify-content: center;
+    padding: 0 5%;
+    
+
+    .detail-project__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        height: auto;
+        padding-top: 8%;
+    
+        .detail-project__header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            height: auto;
+
+            .detail-project__title {
+                font-size: 55px;
+                font-weight: bolder;
+                // margin-bottom: 1px;
+            }
+
+            .detail-project__text {
+                font-size: 18px;
+                font-weight: 600;
+            }
+        }
+
+        .detail-project__images {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); // Establece dos columnas de igual ancho
+            grid-template-rows: repeat(3, minmax(300px, 1fr)); // Tres filas, cada una con un alto mínimo de 300px
+            gap: 50px; // Espacio entre los elementos del grid
+            // margin: 5%;
+            // height: 800px; // Asegura que la altura se ajuste automáticamente al contenido
+            padding-top: 5%;
+            cursor: pointer;
+            
+
+            .image__container:nth-child(1) {
+                grid-column: 1 / span 2; // Ocupa las dos columnas
+                grid-row: 1 / span 2; // Ocupa las dos primeras filas
+            }
+
+            .image__container:nth-child(2) {
+                grid-column: 1; // Ocupa la primera columna
+                grid-row: 3; // Ocupa la tercera fila
+
+            }
+
+            .image__container:nth-child(3) {
+                grid-column: 2; // Ocupa la segunda columna
+                grid-row: 3 / span 2; // Ocupa la segunda y tercera fila
+            }
+
+            .image__container:nth-child(4) {
+                grid-column: 1; // Ocupa la segunda columna
+                grid-row: 4 / span 3 ; // Ocupa la segunda y tercera fila
+                // background-color: red;
+
+            }
+            .image__container:nth-child(5) {
+                grid-column: 2; // Ocupa la segunda columna
+                grid-row: 5 / span 3 ; // Ocupa la segunda y tercera fila
+                // background-color: red;
+
+            }
+
+            img {
+                width: 100%;
+                height: 100%; // Asegura que la imagen llene el contenedor en alto
+                object-fit: cover; // Mantiene la proporción y cubre el área del contenedor
+                // border-radius: 20px;
+            }
+        }
+    }
+     .detail-project__footer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: auto;
+            margin: -4% 0 3%; // Margen superior de 8%, laterales y inferior de 2% y 3% respectivamente
+    
+            .detail-project__footer-text {
+                font-size: 18px;
+                font-weight: 600;
+            }
+        }
+}
+
+@keyframes identifier {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

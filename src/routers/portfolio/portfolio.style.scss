@@ -1,0 +1,38 @@
+.portfolio__container{
+    backdrop-filter: blur(2px);
+    animation: identifier .3s ease-in-out;
+}
+
+.header-portfolio{
+    display: flex;
+    margin: 0 auto;    
+    flex-direction: column;
+    text-align: center;
+    backdrop-filter: blur(2px);
+    width: 80%;
+    animation: identifier .3s ease-in-out;
+    margin-bottom: 3%;
+
+    .header-portfolio__title{
+        margin-top: 10%;
+        margin-bottom: 1%;
+        font-size: 50px;
+        font-weight:200;
+    }
+    .header-portfolio__text{
+        font-size: 15px;
+        font-weight: 400;
+    }
+
+}
+
+
+@keyframes identifier {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+    
+}

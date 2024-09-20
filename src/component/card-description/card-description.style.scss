@@ -1,0 +1,76 @@
+.card-description__container {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 90%;
+    height: 300px; /* Define una altura fija para el contenedor de la imagen */
+    // box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    margin: 0 auto;
+    margin-bottom: 3%;
+
+    .card-description__image {
+        width: 50%; /* Ajusta según tus necesidades */
+        height: 100%; /* Ajusta según el contenedor de la imagen */
+        overflow: hidden; /* Asegura que las imágenes no se salgan del contenedor */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        // border-radius: 10px;
+        position: relative; /* Necesario para la animación de la imagen */
+        background: #f0f0f0; /* Opcional: color de fondo para mejorar la apariencia si la imagen no llena el contenedor */
+
+        img {
+            width: 100%; /* Mantiene el tamaño de la imagen fijo */
+            height: 100%; /* Ajusta la altura de la imagen para que llene el contenedor */
+            object-fit: cover; /* Mantiene la proporción de la imagen y cubre el área del contenedor */
+            // border-radius: 10px; /* Aplica bordes redondeados a la imagen */
+            transition: opacity 0.5s ease-in-out; /* Transición suave para cambios de imagen */
+        }
+    }
+    
+    .card-description__content {
+        width: 50%; /* Ajusta según tus necesidades */
+        padding: 1rem; /* Espaciado interno opcional */
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+
+        .card-description__button{
+            width: 50%;
+            margin: 0 auto;
+        }
+    }
+}
+
+.hovvered-left {
+    animation: passage 0.5s ease-in-out;
+}
+
+.hovvered-right {
+    animation: passage-right 0.5s ease-in-out;
+}
+
+
+@keyframes passage-right {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    
+}
+@keyframes passage {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    
+}

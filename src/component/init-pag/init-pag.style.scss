@@ -1,0 +1,50 @@
+.init-pag__container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+
+    .init-pag__img {
+        width: 25%;
+        height: auto;
+        animation: entry-animation 1.5s ease-in-out;
+        
+    }
+}
+
+
+.exit-animation-background {
+    animation: exit-animation-background 2s ease-in-out;
+}
+
+@keyframes entry-animation {
+    0% {
+        transform: translateX(-300px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes exit-animation-background {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .init-pag__container {
+        .init-pag__img {
+            width: 100%;
+        }
+    }
+}
