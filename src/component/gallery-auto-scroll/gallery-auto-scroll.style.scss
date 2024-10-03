@@ -8,7 +8,7 @@
     overflow: hidden;
     position: relative;
     backdrop-filter: blur(10px);
-    background-color: #ffffff;
+    background-color: transparent;
 
     .gallery-auto-scroll__item {
         display: flex;
@@ -64,7 +64,7 @@
 
             .gallery-auto-scroll__text--fraseCelebre {
                 font-size: 1.5rem;
-                color: #6c6a6a;
+                color: #ffffff;
                 margin-top: 0;
                 margin-bottom: 60px;
                 position: relative;

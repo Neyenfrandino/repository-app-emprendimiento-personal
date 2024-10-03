@@ -6,9 +6,11 @@ import BoletinHome from '../../component/boletin-home/boletin-home.component.jsx
 import DetailImagesModal from '../../component/detail-images-modal/detail-images-modal-component';
 import ButtonBack from '../../component/button-back/button-back.compponente';
 
+import Footer from '../../component/footer/footer.component.jsx';
+
 import './portfolio.style.scss';
 
-const PortfolioRouters = () => {
+const PortfolioRouters = ({ iconsNetworksSocial }) => {
     const location = useLocation();
     const isDetailPage = location.pathname === '/portafolio';
 
@@ -51,6 +53,10 @@ const PortfolioRouters = () => {
                 } />
             </Routes>
             <ButtonBack />
+            <footer className='abaut-me__footer'>
+                <BoletinHome logo={'/img/logoNegro.png'} text={'Mantente Informado,  únete a nuestro boletín'} />
+                <Footer icons={iconsNetworksSocial} copyWhrite={'2024 Code&CommerceSolution'}  />
+            </footer>
         </div>
     );
 }

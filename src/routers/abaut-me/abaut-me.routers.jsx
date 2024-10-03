@@ -3,41 +3,33 @@ import { useLocation } from 'react-router-dom';
 import ButtonBack from '../../component/button-back/button-back.compponente';
 import Header from '../../component/header/header.component.jsx';
 import CardDetail from '../../component/card-detail/card-detail.component.jsx';
+import Footer from '../../component/footer/footer.component.jsx';
+import BoletinHome from '../../component/boletin-home/boletin-home.component.jsx';
+
+import GalleryService from '../../component/gallery-service/gallery-service.component.jsx';
+
+import Button from '../../component/button/button.component';
 
 import './abaut-me.style.scss';
 
-const AbautMeRouters = () => {
+const listImagesGallery = [
+  {
+      urlImagen: 'img/img-no-comprimida.jpg',
+      routeDetail: 'nuestro-equipo',
+      alt: 'img-equipo',
+      title: 'Sobre nuestro Equipo',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+  }
+]
+
+const AbautMeRouters = ({ iconsNetworksSocial }) => {
     const location = useLocation();
     const isDetailPage = location.pathname === '/abaut-me';
     
-    // const [users, setUsers] = useState([]);
-    // const [loading, setLoading] = useState(true); // Estado para manejar el estado de carga
-    // const [error, setError] = useState(null); // Estado para manejar errores
-
-    // useEffect(() => {
-    //     const fetchUsers = async () => {
-    //         try {
-    //             const response = await fetch('https://randomuser.me/api/?results=10');
-    //             if (!response.ok) {
-    //                 throw new Error('Something went wrong with the fetch operation');
-    //             }
-    //             const data = await response.json();
-    //             setUsers(data.results); // Establece los usuarios en el estado
-    //         } catch (error) {
-    //             setError(error.message); // Maneja el error si ocurre
-    //         } finally {
-    //             setLoading(false); // Cambia el estado de carga a falso una vez completada la solicitud
-    //         }
-    //     };
-
-    //     fetchUsers(); // Llama a la función para obtener usuarios
-    // }, []); // El array vacío asegura que esto solo se ejecute una vez al montar el componente
-
-    // if (loading) return <p>Loading...</p>; // Muestra un mensaje de carga mientras se obtienen los datos
-    // if (error) return <p>Error: {error}</p>; // Muestra un mensaje de error si ocurre un error
 
     return (
         <div className='abaut-me__container'>
+            <ButtonBack />
             <div className='abaut-me__header'>
                 <Header 
                 route='acerca-de-mi' 
@@ -47,16 +39,6 @@ const AbautMeRouters = () => {
                 subtitle={'La realidad a simple vista parece no ser perfecta, pero podemos aprender de ella y mejorar. Esa es una opcion que tenemos todos los seres humanos.'}
                 />
             </div>
-            {/* <div className='abaut-me__avatars'>
-                {users.map((user, index) => (
-                    <img
-                        src={user.picture.medium} // Usa la URL del avatar de cada usuario
-                        alt={`avatar-${index}`}
-                        key={index}
-                    />
-                ))}
-            </div> */}
-
 
             <div className='content__detail__all'>
                 <div className='abaut-me__detail'>
@@ -83,11 +65,27 @@ const AbautMeRouters = () => {
                         image={'/img/marketing.png'}
                         text={'Sitios web optimizados para buscadores, con interfaces responsivas (adaptadas a todos los dispositivos). Tiendas online vinculadas al sistema de Gestión.'}
                     />
+
+                    
+                </div>
+
+                <div className='abaut-me__button-services'>
+                    <Button text='Conoce mas sobre nuestros servicios' option='secondary-button' onClick={() => window.location.href = '/servicios'} />
                 </div>
 
             </div>
 
-            <ButtonBack />
+
+            <div className='abaut-me__equipo'>
+                <GalleryService dataImages={listImagesGallery} />
+            </div>
+
+
+            <footer className='abaut-me__footer'>
+                <BoletinHome logo={'/img/logoNegro.png'} text={'Mantente Informado,  únete a nuestro boletín'} />
+                <Footer icons={iconsNetworksSocial} copyWhrite={'2024 Code&CommerceSolution'}  />
+            </footer>
+
         </div>
     );
 }

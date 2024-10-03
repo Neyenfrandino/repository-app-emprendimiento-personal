@@ -4,7 +4,7 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import './gallery-service.style.scss';
 
 
-const GalleryService = ({dataImages, }) => {
+const GalleryService = ({dataImages}) => {
     const navigate = useNavigate();
 
 

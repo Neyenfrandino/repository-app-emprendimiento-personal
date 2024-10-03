@@ -1,8 +1,8 @@
-$primary-color: #42CF8B;
-$secondary-color: #50A57C;
-$tertiary-color: #25FA93;
-$quaternary-color: #507A66;
-$quinary-color: #415049;
+// $primary-color: #42CF8B;
+// $secondary-color: #50A57C;
+// $tertiary-color: #25FA93;
+// $quaternary-color: #507A66;
+// $quinary-color: #415049;
 
 html, body {
   margin: 0;
@@ -12,6 +12,8 @@ html, body {
   font-style:  400 Italic;
   // position: relative; /* Necesario para el posicionamiento del pseudo-elemento */
   // overflow: hidden; /* Opcional: evita el scroll si la imagen es más grande que la pantalla */
+  background-color: #00223388;
+
   
 }
 

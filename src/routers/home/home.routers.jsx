@@ -13,22 +13,14 @@ import GalleryAutoScroll from '../../component/gallery-auto-scroll/gallery-auto-
 import SeccionSkillsCompany from '../../component/seccion-skills-company/seccion-skills-company.component.jsx'
 
 import projectPortfolio from '../../project.portfolio.json'
-import { faInstagram, faFacebook, faYoutube, faTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-// import { FaEnvelope } from 'react-icons/fa';
+
 
 import './home.style.scss'
 
-const logoBlancoLetrasNav = '/img/logoBlancoLetrasNav.png'; 
-const logoBlanco = "/img/logoBlanco.png";
+// const logoBlancoLetrasNav = '/img/logoBlancoLetrasNav.png'; 
+// const logoBlanco = "/img/logoBlanco.png";
 
-const iconsNetworksSocial = [
-  { icon: faInstagram, url: 'https://www.instagram.com/design.innovadores/' },
-  { icon: faFacebook, url: 'https://www.facebook.com/DesignInnovadores/' },
-  { icon: faYoutube, url: 'https://www.youtube.com/channel/UC-9-v9i8-6-4-0-3-2-1' },
-  // { icon: FaEnvelope , url: 'mailto:info@designinnovadores.com' },
-  { icon: faTwitter, url: 'https://twitter.com/DesignInnovadores' },
-  { icon: faLinkedin, url: 'https://www.linkedin.com/company/designinnovadores/' }
-];
+
 
 const listImagesGallery = [
   {
@@ -94,7 +86,7 @@ const data = [
   }
 ]
 
-const HomeRouters = () => {
+const HomeRouters = ({ iconsNetworksSocial }) => {
   return (
     <div className="home__container">
       
@@ -126,32 +118,6 @@ const HomeRouters = () => {
           skills={['Servicios de calidad', 'Posicionamiento de tu marca', 'Paquetes a tu alcance']}
         />
       </div>
-
-      {/* <div className='home__content__detail'>
-          <CardDetail 
-            title='Enfoque Innovador'
-            image={'/img/iconoInnovacion.png'}
-            text={'Con tecnología y diseños centrados en ti, llevamos la innovación a cada detalle. Únete a nosotros y descubre el futuro hoy.'}
-          />
-
-          <CardDetail 
-            title='Gestión Empresarial'
-            image={'/img/erp.png'}
-            text={'Nuestros sistemas ERP transforman tu negocio con herramientas para Facturación Electrónica, Control de Stock, CRM, Ventas y Permisos. Descubre, innova y haz crecer tu negocio al ritmo de la tecnología. ¡Descubre el futuro hoy!'}
-          />
-
-          <CardDetail 
-            title='Diseño y desarrollo web'
-            image={'/img/desarrolloYdiseñoweb.png'}
-            text={'Sitios web optimizados para buscadores, con interfaces responsivas (adaptadas a todos los dispositivos). Tiendas online vinculadas al sistema de Gestión.'}
-          />
-
-          <CardDetail 
-            title='Publicidad digital'
-            image={'/img/marketing.png'}
-            text={'Sitios web optimizados para buscadores, con interfaces responsivas (adaptadas a todos los dispositivos). Tiendas online vinculadas al sistema de Gestión.'}
-          />
-      </div> */}
 
       <div className='home__content__gallery-auto-scroll'>  
         <GalleryAutoScroll data={data} />

@@ -1,0 +1,46 @@
+.service__container{
+    backdrop-filter: blur(2px);
+    animation: identifier .3s ease-in-out;
+    height: 100vh;
+    position: relative;
+
+}
+    .service__header{
+        display: flex;
+        margin: 0 auto;
+        margin-top: 70px;    
+        flex-direction: column;
+        text-align: center;
+        width: 80%;
+        height: 80%;
+            
+
+        .service__header__image{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            // background-color: black;
+
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                opacity: 0.8;
+                transition: opacity 0.3s ease-in-out;
+            }
+        }
+        
+        .service__header__content{
+            position: absolute;
+            top: 50px;
+            right: 180px;
+            width: auto;
+            height: auto;
+            // border: 1px solid rgb(0, 0, 0);
+            // border-radius: 10px;
+            // background-color: #A1FADB88;
+            // backdrop-filter: blur(2px);
+            padding: 2%;
+        }
+        
+    }

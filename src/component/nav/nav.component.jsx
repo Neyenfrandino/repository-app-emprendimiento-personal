@@ -26,16 +26,18 @@ const Nav = ({ routers, imgLogo }) => {
 
     return(
         <div className="nav__container">
-            <div className='nav__logo'>
-                <Link to='/'>
-                    <img src={imgLogo} alt='logo' />
-                </Link>
-            </div>
+            <div className='nav__content'>
+                <div className='nav__logo'>
+                    <Link to='/'>
+                        <img src={imgLogo} alt='logo' />
+                    </Link>
+                </div>
 
-            <nav className='nav__navigation'>
-                {routersArr(routers)}
-            </nav>
+                <nav className='nav__navigation'>
+                    {routersArr(routers)}
+                </nav>
            
+            </div>
         </div>
     )
 }

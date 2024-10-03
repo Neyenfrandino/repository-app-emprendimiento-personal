@@ -5,8 +5,7 @@ import './card-detail.style.scss'
 const CardDetail = ( {title, text, image} ) => {
 
     return (
-        <div className='card-detail__container'>
-            
+        <div className='card-detail__container'> 
             <div className='card-detail__image'>
                 <img src={image} alt='icono-representacion' />
             </div>
@@ -14,12 +13,7 @@ const CardDetail = ( {title, text, image} ) => {
             <div className='card-detail__content'>
                 <h1 className='card-detail__title'>{title}</h1>
                 <p className='card-detail__text'>{text}</p>
-            </div>
-
-            <div className='card-detail__button'>
-                <Button text='Explora' option={'secondary-button'} onClick={() => window.location.href = '/'} />
-            </div>
-           
+            </div>           
         </div>
     )
 
